@@ -1,26 +1,19 @@
-package com.example.pinglib
+package com.example.sampinglib
 
-import com.example.pinglib.IPTools
-import com.example.pinglib.PingResult
-import com.example.pinglib.PingStats
-import com.example.pinglib.PingOptions
-import com.example.pinglib.PingTools
-import com.example.pinglib.Ping.PingListener
-import com.example.pinglib.PingNative
 import java.net.InetAddress
 
 class PingStats(
-    val address: InetAddress,
-    val noPings: Long,
+    private val address: InetAddress,
+    private val noPings: Long,
     val packetsLost: Long,
     totalTimeTaken: Float,
     minTimeTaken: Float,
     maxTimeTaken: Float
 ) {
     val averageTimeTaken: Float
-    val minTimeTaken: Float
-    val maxTimeTaken: Float
-    val isReachable: Boolean
+    private val minTimeTaken: Float
+    private val maxTimeTaken: Float
+    private val isReachable: Boolean
 
     init {
         averageTimeTaken = totalTimeTaken / noPings

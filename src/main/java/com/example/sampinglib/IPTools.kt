@@ -1,12 +1,5 @@
-package com.example.pinglib
+package com.example.sampinglib
 
-import com.example.pinglib.IPTools
-import com.example.pinglib.PingResult
-import com.example.pinglib.PingStats
-import com.example.pinglib.PingOptions
-import com.example.pinglib.PingTools
-import com.example.pinglib.Ping.PingListener
-import com.example.pinglib.PingNative
 import java.net.Inet4Address
 import java.net.InetAddress
 import java.net.NetworkInterface
@@ -34,11 +27,11 @@ object IPTools {
         return address != null && IPV4_PATTERN.matcher(address).matches()
     }
 
-    fun isIPv6StdAddress(address: String?): Boolean {
+    private fun isIPv6StdAddress(address: String?): Boolean {
         return address != null && IPV6_STD_PATTERN.matcher(address).matches()
     }
 
-    fun isIPv6HexCompressedAddress(address: String?): Boolean {
+    private fun isIPv6HexCompressedAddress(address: String?): Boolean {
         return address != null && IPV6_HEX_COMPRESSED_PATTERN.matcher(address).matches()
     }
 
@@ -58,7 +51,7 @@ object IPTools {
     /**
      * @return The list of all IPv4 addresses found
      */
-    val localIPv4Addresses: ArrayList<InetAddress>
+    private val localIPv4Addresses: ArrayList<InetAddress>
         get() {
             val foundAddresses = ArrayList<InetAddress>()
             val ifaces: Enumeration<NetworkInterface>

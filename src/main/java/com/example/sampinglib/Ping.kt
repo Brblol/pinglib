@@ -1,12 +1,5 @@
-package com.example.pinglib
+package com.example.sampinglib
 
-import com.example.pinglib.IPTools
-import com.example.pinglib.PingResult
-import com.example.pinglib.PingStats
-import com.example.pinglib.PingOptions
-import com.example.pinglib.PingTools
-import com.example.pinglib.Ping.PingListener
-import com.example.pinglib.PingNative
 import java.lang.Exception
 import java.lang.NullPointerException
 import java.net.InetAddress

@@ -1,10 +1,11 @@
-package com.example.pinglib
+package com.example.sampinglib
 
 import java.io.BufferedReader
 import java.io.IOException
 import java.io.InputStreamReader
 import java.lang.StringBuilder
 import java.net.InetAddress
+import kotlin.math.max
 
 object PingNative {
     @Throws(IOException::class, InterruptedException::class)
@@ -16,8 +17,8 @@ object PingNative {
         }
         val echo = StringBuilder()
         val runtime = Runtime.getRuntime()
-        val timeoutSeconds = Math.max(pingOptions.timeoutMillis / 1000, 1)
-        val ttl = Math.max(pingOptions.timeToLive, 1)
+        val timeoutSeconds = max(pingOptions.timeoutMillis / 1000, 1)
+        val ttl = max(pingOptions.timeToLive, 1)
         var address = host.hostAddress
         var pingCommand = "ping"
         if (address != null) {
@@ -90,7 +91,7 @@ object PingNative {
      *
      * @return The ping result
      */
-    fun getPingStats(pingResult: PingResult, s: String): PingResult {
+    private fun getPingStats(pingResult: PingResult, s: String): PingResult {
         var s = s
         val pingError: String
         if (s.contains("0% packet loss")) {

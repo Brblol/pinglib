@@ -1,12 +1,5 @@
-package com.example.pinglib
+package com.example.sampinglib
 
-import com.example.pinglib.IPTools
-import com.example.pinglib.PingResult
-import com.example.pinglib.PingStats
-import com.example.pinglib.PingOptions
-import com.example.pinglib.PingTools
-import com.example.pinglib.Ping.PingListener
-import com.example.pinglib.PingNative
 import java.io.IOException
 import java.lang.Exception
 import java.net.InetAddress
@@ -60,7 +53,7 @@ object PingTools {
      * @param pingOptions   - ping command options
      * @return - the ping results
      */
-    fun doJavaPing(ia: InetAddress?, pingOptions: PingOptions): PingResult {
+    private fun doJavaPing(ia: InetAddress?, pingOptions: PingOptions): PingResult {
         val pingResult = PingResult(ia)
         if (ia == null) {
             pingResult.isReachable = false
