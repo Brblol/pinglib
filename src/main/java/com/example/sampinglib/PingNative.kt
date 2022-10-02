@@ -43,6 +43,8 @@ object PingNative {
                 while (buffer.readLine().also { line = it } != null) {
                     echo.append(line).append("\n")
                 }
+                reader.close()
+                buffer.close()
                 return getPingStats(pingResult, echo.toString())
             }
             1 -> pingError = "failed, exit = 1"
