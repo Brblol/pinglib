@@ -1,0 +1,3 @@
+[submodule "pinglib"]
+	path = pinglib
+	url = https://github.com/Brblol/pinglib.git
