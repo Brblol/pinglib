@@ -49,7 +49,7 @@ afterEvaluate {
 
                 groupId = 'com.github.brblol'
                 artifactId = 'pinglib'
-                version = '1.0'
+                version = '1.0.0'
             }
         }
     }
